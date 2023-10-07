@@ -19,6 +19,10 @@ public class ProductController
     public Map<String, String> helloWorld() throws UnknownHostException {
         return getResponse();
     }
+    @GetMapping(path = "/hello", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public String sayHelloWorld() throws UnknownHostException {
+        return "Hello Microservice";
+    }
     private Map<String, String> getResponse() throws UnknownHostException {
         String host = InetAddress.getLocalHost().getHostName();
         String ip = InetAddress.getLocalHost().getHostAddress();
